@@ -1,4 +1,5 @@
 import express,{Express,Request,Response,NextFunction} from 'express'
+import { IUser, User} from './models/user.js'
 
 const app:Express=express()
 
@@ -34,6 +35,14 @@ app.get('/users/:id',(req:Request<{id:string}>,res:Response)=>{
 
 app.get("/",(req:Request,res:Response)=>{
     res.send('hello typescript with express')
+})
+
+app.get('/users', async(req,res)=>{
+    try{
+        const user:IUser[]=await User.find({})
+    }catch(e){
+        res.status(400).json("some error")
+    }
 })
 
 const port=3000;

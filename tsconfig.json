@@ -19,7 +19,7 @@
 
     "jsx": "react-jsx",
     "verbatimModuleSyntax": false,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force"
   },
